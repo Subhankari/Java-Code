@@ -21,6 +21,19 @@ public class HeapOperations {
 		}
 	}
 	
+	public int[] HeapSort(int[] A, int n){
+		int[] res = new int[n];
+		Heap h =  new Heap(n,"max");
+		BuildHeap(h,A,n);
+		int old_count = h.count;
+		for(int i = 0; i < n; i++){
+			res[i] = h.array[0];
+			h.array[0] = h.array[h.count - 1];
+			h.count--;
+			h.PercolateDown(0);
+		}
+		return res;
+	}
 	
 
 }
