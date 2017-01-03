@@ -99,5 +99,10 @@ public class Heap {
 		arr = null;
 	}
 	
+	public void DestroyHeap(){
+		this.count = 0;
+		this.array = null;
+	}
+	
 	
 }
